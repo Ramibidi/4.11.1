@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<center>
+    <br>
+    <h1>Welcome to your profile {{user }}</h1>
+
+    <p>{{dump(app.user.roles)}}</p>
+</center>
+{% endblock %}

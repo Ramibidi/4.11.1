@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<center>
+    <h1>Registration on the site </h1>
+    <br>
+
+
+    <br>
+
+    {{ form_start(form)}}
+    {{ form_row(form.username, {'label': 'First name ' ,'attr':{'placeholder':'Enter your first name'}}) }}
+
+    <br>
+    {{ form_row(form.email, {'label': 'Address Email ' ,'attr':{'placeholder':'Enter your address Email'}}) }}
+    <br>
+    {{ form_row(form.password , {'label': 'Password ' ,'attr':{'placeholder':'Enter your password '}}) }}
+
+    <br>
+    {{ form_row(form.roles ) }}
+    <br>
+
+
+    <button type="submit" class="btn btn-success">Registration</button>
+
+</center>
+{{ form_end(form)}}
+<br>
+
+<center>
+    <a href="{{path('security_logout')}}"><button>Log out </button></a>
+    <br>
+</center>
+
+</center>
+<center>
+    <h1>list of users</h1>
+    <center>
+        <table width="50%" border="1" cellspacing="1" cellpadding="5">
+            <tr>
+                <th>
+                    <center>Username</center>
+                </th>
+
+                <th>
+                    <center>Email</center>
+                </th>
+
+
+
+            </tr>
+            {% for key in users %}
+            <tr>
+                <td>
+                    <center>{{ key.username|e }}</center>
+                </td>
+
+                <td>
+                    <center>{{ key.email|e }}</center>
+                </td>
+
+
+
+            </tr>
+            {% endfor %}
+        </table>
+
+
+    </center>
+
+    {% endblock %}

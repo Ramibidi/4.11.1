@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+{% block title %}Register{% endblock %}
+
+
+
+{% block body %}
+{% if app.user %}
+<h1>Welcome to your profile </h1>
+{#}<a href="{{path('security_logout')}}"><button>logout</button></a>{#}
+{% else %}
+<h1>404 not found</h1>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<center>
+    <h1>list of Product</h1>
+
+    Your choice : {{product.name}}
+    <br>
+    <br>
+    <br>
+
+
+    <table width="50%" border="1" cellspacing="1" cellpadding="5">
+        <tr>
+            <th>
+                <center>Id</center>
+            </th>
+
+            <th>
+                <center>Name</center>
+            </th>
+            <th>
+                <center>Prix</center>
+            </th>
+            <th>
+                <center>Status</center>
+            </th>
+            <th>
+                <center>Buy</center>
+            </th>
+
+
+
+        </tr>
+
+        <tr>
+            <td>
+                <center>{{ product.id }}</center>
+            </td>
+
+            <td>
+                <center>{{ product.name }}</center>
+            </td>
+            <td>
+                <center>{{ product.prix }}</center>
+            </td>
+            <td>
+                <center>{{ product.status }}</center>
+            </td>
+            <td>
+                <center><button>Buy product
+                        {{product.id}}</button></center>
+            </td>
+</center>
+
+{% endblock %}
